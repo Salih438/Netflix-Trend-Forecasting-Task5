@@ -1,0 +1,90 @@
+project:
+  name: "netflix-trend-forecasting"
+  version: "1.0.0"
+  seed: 42
+
+paths:
+  raw_data: "data/raw/Dataset.csv"
+  processed_data: "data/processed/"
+  outputs:
+    figures: "outputs/figures/"
+    metrics: "outputs/metrics/"
+    reports: "outputs/reports/"
+
+data:
+  date_column: "date_added"
+  date_format: "%m/%d/%Y"
+  placeholder_string: "Not Given"
+  content_types:
+    - "Movie"
+    - "TV Show"
+  full_date_range:
+    start: "2008-01-01"
+    end: "2021-09-30"
+  modeling_start_date: "2016-01-01"
+  modeling_end_date: "2021-08-31"
+  observation_cutoff: "2021-09-25"
+  missing_month_policy: "error"
+  reindex_freq: "MS"
+
+eda:
+  top_n_countries: 15
+  top_n_genres: 20
+
+features:
+  lag_months: [1, 2, 3, 6, 12]
+  rolling_windows: [3, 6, 12]
+  calendar_features:
+    - month
+    - quarter
+    - year
+    - is_q4
+
+models:
+  future_horizon_months: 12
+  moving_average_window: 3
+  train_end_date: "2020-12-31"
+  test_start_date: "2021-01-01"
+  statistical:
+    sarima:
+      order: [1, 1, 1]
+      seasonal_order: [1, 1, 0, 12]
+      trend: "n"
+    ets:
+      error: "add"
+      trend: "add"
+      seasonal: "add"
+      seasonal_periods: 12
+      damped_trend: true
+  ml:
+    xgboost:
+      n_estimators: 300
+      max_depth: 4
+      learning_rate: 0.05
+      subsample: 0.8
+      colsample_bytree: 0.8
+      random_state: 42
+    random_forest:
+      n_estimators: 200
+      max_depth: 6
+      min_samples_leaf: 2
+      random_state: 42
+
+evaluation:
+  metrics:
+    - MAE
+    - RMSE
+    - sMAPE
+    - MASE
+    - R2
+    - MAPE
+  cross_validation:
+    n_splits: 5
+    min_train_size: 36
+    horizon_months: 12
+    step_months: 3
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
+  datefmt: "%Y-%m-%d %H:%M:%S"

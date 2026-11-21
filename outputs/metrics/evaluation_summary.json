@@ -1,0 +1,216 @@
+{
+  "target": "Monthly Netflix catalogue additions by date_added",
+  "selection_criterion": "Mean rolling-origin RMSE, then mean MAE, then model name",
+  "selection_folds": [
+    {
+      "fold": 1,
+      "train_start": "2016-01-01",
+      "origin": "2018-12-01",
+      "validation_start": "2019-01-01",
+      "validation_end": "2019-12-01",
+      "horizon": 12
+    },
+    {
+      "fold": 2,
+      "train_start": "2016-01-01",
+      "origin": "2019-03-01",
+      "validation_start": "2019-04-01",
+      "validation_end": "2020-03-01",
+      "horizon": 12
+    },
+    {
+      "fold": 3,
+      "train_start": "2016-01-01",
+      "origin": "2019-06-01",
+      "validation_start": "2019-07-01",
+      "validation_end": "2020-06-01",
+      "horizon": 12
+    },
+    {
+      "fold": 4,
+      "train_start": "2016-01-01",
+      "origin": "2019-09-01",
+      "validation_start": "2019-10-01",
+      "validation_end": "2020-09-01",
+      "horizon": 12
+    },
+    {
+      "fold": 5,
+      "train_start": "2016-01-01",
+      "origin": "2019-12-01",
+      "validation_start": "2020-01-01",
+      "validation_end": "2020-12-01",
+      "horizon": 12
+    }
+  ],
+  "train_start": "2016-01-01",
+  "train_origin_month": "2020-12-01",
+  "holdout_start": "2021-01-01",
+  "holdout_end": "2021-08-01",
+  "holdout_months": 8,
+  "projection_origin_month": "2021-08-01",
+  "projection_start": "2021-09-01",
+  "projection_end": "2022-08-01",
+  "projection_months": 12,
+  "segments": {
+    "All": {
+      "selected_model": "RandomForest",
+      "best_validation_baseline": "SeasonalNaive",
+      "selected_validation": {
+        "MAE": 30.17573015873017,
+        "RMSE": 37.67246358652245,
+        "sMAPE": 18.0853884340747,
+        "MASE": 0.6107656001208251,
+        "R2": -0.11567367969820827,
+        "MAPE": 17.698503903295226
+      },
+      "baseline_validation": {
+        "MAE": 33.36666666666667,
+        "RMSE": 43.74062644567628,
+        "sMAPE": 21.001739098735662,
+        "MASE": 0.6760126520827893,
+        "R2": -0.7343606608765445,
+        "MAPE": 19.594579326550907
+      },
+      "selected_holdout": {
+        "MAE": 41.01161424686425,
+        "RMSE": 48.19792070548232,
+        "sMAPE": 24.937586530158903,
+        "MASE": 0.9423444154377615,
+        "R2": 0.02423404108996363,
+        "MAPE": 24.412965630254085
+      },
+      "baseline_holdout": {
+        "MAE": 43.75,
+        "RMSE": 54.8270006474912,
+        "sMAPE": 25.790543746265183,
+        "MASE": 1.0052656773575872,
+        "R2": -0.26263561007304737,
+        "MAPE": 25.294813141575347
+      },
+      "projection_model": "BottomUp",
+      "holdout_exploratory_coverage": {
+        "80": {
+          "hits": 6,
+          "months": 8
+        },
+        "95": {
+          "hits": 7,
+          "months": 8
+        }
+      },
+      "bottom_up_holdout": {
+        "MAE": 43.99077320098877,
+        "RMSE": 50.23542735989474,
+        "sMAPE": 26.84452801972841,
+        "MASE": 1.0107980438714508,
+        "R2": -0.060008285061730726,
+        "MAPE": 27.09961745844623
+      },
+      "bottom_up_exploratory_coverage": {
+        "80": {
+          "hits": 7,
+          "months": 8
+        },
+        "95": {
+          "hits": 7,
+          "months": 8
+        }
+      }
+    },
+    "Movie": {
+      "selected_model": "XGBoost",
+      "best_validation_baseline": "SeasonalNaive",
+      "selected_validation": {
+        "MAE": 26.87080446879069,
+        "RMSE": 34.000193592801665,
+        "sMAPE": 23.126862056511108,
+        "MASE": 0.6672310974795204,
+        "R2": -0.3162203234439588,
+        "MAPE": 22.9427409580335
+      },
+      "baseline_validation": {
+        "MAE": 29.48333333333333,
+        "RMSE": 35.7317902738995,
+        "sMAPE": 25.71222669763829,
+        "MASE": 0.7285813882740658,
+        "R2": -0.6328130194328875,
+        "MAPE": 25.429125734882952
+      },
+      "selected_holdout": {
+        "MAE": 27.74077320098877,
+        "RMSE": 33.37290210639152,
+        "sMAPE": 25.794792496132217,
+        "MASE": 0.7630699791675994,
+        "R2": -0.10685007655675816,
+        "MAPE": 25.264387499388214
+      },
+      "baseline_holdout": {
+        "MAE": 26.25,
+        "RMSE": 34.19795315512319,
+        "sMAPE": 23.150957297385993,
+        "MASE": 0.7220630372492837,
+        "R2": -0.16225407226820288,
+        "MAPE": 23.36955831957416
+      },
+      "projection_model": "XGBoost",
+      "holdout_exploratory_coverage": {
+        "80": {
+          "hits": 7,
+          "months": 8
+        },
+        "95": {
+          "hits": 8,
+          "months": 8
+        }
+      }
+    },
+    "TV Show": {
+      "selected_model": "MovingAverage",
+      "best_validation_baseline": "MovingAverage",
+      "selected_validation": {
+        "MAE": 8.144444444444446,
+        "RMSE": 10.419184313907769,
+        "sMAPE": 15.792090916879186,
+        "MASE": 0.5952426176201759,
+        "R2": -0.5932216679251273,
+        "MAPE": 15.709250773574434
+      },
+      "baseline_validation": {
+        "MAE": 8.144444444444446,
+        "RMSE": 10.419184313907769,
+        "sMAPE": 15.792090916879186,
+        "MASE": 0.5952426176201759,
+        "R2": -0.5932216679251273,
+        "MAPE": 15.709250773574434
+      },
+      "selected_holdout": {
+        "MAE": 17.166666666666664,
+        "RMSE": 19.46221410266,
+        "sMAPE": 30.784819228135447,
+        "MASE": 1.2560975609756095,
+        "R2": -0.007387706855791931,
+        "MAPE": 33.72828484161107
+      },
+      "baseline_holdout": {
+        "MAE": 17.166666666666664,
+        "RMSE": 19.46221410266,
+        "sMAPE": 30.784819228135447,
+        "MASE": 1.2560975609756095,
+        "R2": -0.007387706855791931,
+        "MAPE": 33.72828484161107
+      },
+      "projection_model": "MovingAverage",
+      "holdout_exploratory_coverage": {
+        "80": {
+          "hits": 4,
+          "months": 8
+        },
+        "95": {
+          "hits": 6,
+          "months": 8
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+content_type,month,model,forecast,lower_80,upper_80,lower_95,upper_95,calibration_n
+All (direct),2021-09-01,RandomForest,155.15,109.52,200.77,46.44,263.85,20
+All (direct),2021-10-01,RandomForest,162.86,117.23,208.48,54.15,271.57,20
+All (direct),2021-11-01,RandomForest,150.74,105.12,196.37,42.03,259.45,20
+All (direct),2021-12-01,RandomForest,163.21,117.58,208.83,54.50,271.92,20
+All (direct),2022-01-01,RandomForest,152.56,105.97,199.15,59.98,245.14,20
+All (direct),2022-02-01,RandomForest,146.24,99.65,192.83,53.66,238.82,20
+All (direct),2022-03-01,RandomForest,144.71,98.12,191.30,52.13,237.29,20
+All (direct),2022-04-01,RandomForest,159.09,112.50,205.68,66.51,251.67,20
+All (direct),2022-05-01,RandomForest,149.95,102.32,197.57,57.42,242.47,20
+All (direct),2022-06-01,RandomForest,153.06,105.43,200.69,60.54,245.58,20
+All (direct),2022-07-01,RandomForest,155.79,108.17,203.42,63.27,248.32,20
+All (direct),2022-08-01,RandomForest,143.72,96.09,191.35,51.20,236.24,20

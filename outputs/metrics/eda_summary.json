@@ -1,0 +1,124 @@
+{
+  "shape": [
+    8790,
+    10
+  ],
+  "missing": {
+    "show_id": 0,
+    "type": 0,
+    "title": 0,
+    "director": 2588,
+    "country": 287,
+    "date_added": 0,
+    "release_year": 0,
+    "rating": 0,
+    "duration": 0,
+    "listed_in": 0
+  },
+  "content_type_counts": {
+    "Movie": 6126,
+    "TV Show": 2664
+  },
+  "date_range": {
+    "min": "2008-01-01",
+    "max": "2021-09-25",
+    "n_unique_months": 108,
+    "n_calendar_months": 165,
+    "pre_2015_observed_months": 27,
+    "pre_2015_calendar_months": 84
+  },
+  "top_countries": {
+    "United States": 3240,
+    "India": 1057,
+    "United Kingdom": 638,
+    "Pakistan": 421,
+    "Canada": 271,
+    "Japan": 259,
+    "South Korea": 214,
+    "France": 213,
+    "Spain": 182,
+    "Mexico": 138,
+    "Egypt": 123,
+    "Australia": 114,
+    "Turkey": 112,
+    "Nigeria": 105,
+    "Germany": 104
+  },
+  "top_genres": {
+    "International Movies": 2752,
+    "Dramas": 2426,
+    "Comedies": 1674,
+    "International TV Shows": 1349,
+    "Documentaries": 869,
+    "Action & Adventure": 859,
+    "TV Dramas": 762,
+    "Independent Movies": 756,
+    "Children & Family Movies": 641,
+    "Romantic Movies": 616,
+    "Thrillers": 577,
+    "TV Comedies": 573,
+    "Crime TV Shows": 469,
+    "Kids' TV": 448,
+    "Docuseries": 394,
+    "Music & Musicals": 375,
+    "Romantic TV Shows": 370,
+    "Horror Movies": 357,
+    "Stand-Up Comedy": 343,
+    "Reality TV": 255
+  },
+  "yearly_growth": {
+    "2008": 2,
+    "2009": 2,
+    "2010": 1,
+    "2011": 13,
+    "2012": 3,
+    "2013": 11,
+    "2014": 24,
+    "2015": 82,
+    "2016": 426,
+    "2017": 1185,
+    "2018": 1648,
+    "2019": 2016,
+    "2020": 1879,
+    "2021": 1498
+  },
+  "modeling_months": {
+    "start": "2016-01-01",
+    "end": "2021-08-01",
+    "calendar_months": 68,
+    "observed_months": 68,
+    "by_type": {
+      "Movie": 68,
+      "TV Show": 68
+    }
+  },
+  "comparable_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020
+  ],
+  "quarterly_seasonality": {
+    "Q1": 1669,
+    "Q2": 1574,
+    "Q3": 1709,
+    "Q4": 2202
+  },
+  "content_lag_years": {
+    "mean": 4.699863263445761,
+    "median": 1.0,
+    "std": 8.793842962856173,
+    "min": 0,
+    "max": 93,
+    "p25": 0.0,
+    "p75": 5.0,
+    "distribution_brackets": {
+      "same_year_0yr": 3239,
+      "1_to_2_years": 2297,
+      "3_to_5_years": 1117,
+      "6_to_10_years": 918,
+      "over_10_years": 1205
+    }
+  }
+}
